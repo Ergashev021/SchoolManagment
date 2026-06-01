@@ -1,0 +1,2 @@
+# SchoolManagment
+Database of school

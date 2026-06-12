@@ -11,4 +11,6 @@ public interface IStudentService
     void DeleteStudentById(Guid studentId);
     List<Student> GetStudentsByName(string name, int pageNumber, int pageSize);
     void PrintStudentInfo(Student student);
+    void ShowStudentCountByClass();
+    
 }

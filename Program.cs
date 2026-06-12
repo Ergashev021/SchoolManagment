@@ -133,6 +133,7 @@ void StudentMenu()
         Console.WriteLine("3. Update Student");
         Console.WriteLine("4. Delete Student");
         Console.WriteLine("5. Search Student");
+        Console.WriteLine("6. Show Student Count By Class");
         Console.WriteLine("0. Back");
 
         Console.Write("Choose: ");
@@ -197,6 +198,12 @@ void StudentMenu()
 
                 Console.ReadKey();
                 break;
+            case "6":
+                {
+                    studentService.ShowStudentCountByClass();
+                    Console.ReadKey();
+                    break;
+                }
         }
 
     } while (choice != "0");

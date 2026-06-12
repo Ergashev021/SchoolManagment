@@ -28,10 +28,25 @@ Simple Console App for managing Teachers and Students using C#.
 
 ## Structure
 
+## Project Structure
+
 ```text
-Models
-Services
-Program.cs
+SchoolManagement
+│
+├── Models
+│   ├── Student.cs
+│   └── Teacher.cs
+│
+├── Services
+│   ├── StudentService
+│   │   ├── IStudentService.cs
+│   │   └── StudentService.cs
+│   │
+│   └── TeacherService
+│       ├── ITeacherService.cs
+│       └── TeacherService.cs
+│
+└── Program.cs
 ```
 
 ## Run

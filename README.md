@@ -8,17 +8,22 @@ Simple Console App for managing Teachers and Students using C#.
 - Add Teacher
 - Show Teachers
 - Update / Delete (basic CRUD)
+- Delete Teacher
+- Search Teacher by Name
 
 ### Student
 - Add Student
 - Show Students
 - Update / Delete (basic CRUD)
+- Delete Student
+- Search Student by Name
+- Show Student Count By Class
 
 ## Tech
 - C#
 - .NET Console
 - OOP
-- List
+- Dictionary<TKey, TValue>
 - Interface
 
 ## Structure
@@ -31,9 +36,7 @@ Program.cs
 
 ## Run
 
-```bash
-dotnet run
-```
+![Result](assets/result.gif)
 
 ## Author
 Tursunboy Ergashev

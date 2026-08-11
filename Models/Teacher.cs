@@ -1,7 +1,10 @@
+using System.Dynamic;
+
 namespace SchoolManagmnent.Models;
 
 public class Teacher
 {
+    public int Id{get; set;}
     public string FullName{get;set;}
     public string Subjects {get; set;}
     private int experience;

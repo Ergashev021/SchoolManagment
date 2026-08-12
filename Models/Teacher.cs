@@ -4,7 +4,7 @@ namespace SchoolManagmnent.Models;
 
 public class Teacher
 {
-    public int Id{get; set;}
+    public Guid Id{get; set;} = Guid.NewGuid();
     public string FullName{get;set;}
     public string Subjects {get; set;}
     private int experience;

@@ -26,6 +26,7 @@ public class TeacherService : ITeacherInterface
         Console.WriteLine(
             $""" 
             Teacher Info:
+                    Id : {teacher.Id}
                     Full Name: {teacher.FullName}
                     Subjects : {teacher.Subjects}
                     Experience:{teacher.Exprience}
@@ -45,5 +46,52 @@ public class TeacherService : ITeacherInterface
         Console.Write("Qualification Catagory : ");
         teacher.QualificationCategory = int.Parse(Console.ReadLine());
         return teacher;
+    }
+
+    public Teacher GetById(Guid teacherId)
+    {
+        foreach(Teacher teacher in teachers)
+        {
+            if(teacherId == teacher.Id)
+            {
+                return teacher;
+            }
+        }
+        return null;
+    }
+
+    public void DeleteById(Guid teacherId)
+    {
+        for(int i = 0;i < this.teachers.Length; i++)
+        {
+            if(this.teachers[i]?.Id == teacherId)
+            {
+                this.teachers[i] = null;
+                Console.WriteLine("Teacher is successfully deleted ");
+            }
+        }
+        Console.WriteLine("Teacher is not found ");
+    }
+
+    public void UpdateTeacher(Teacher teacher)
+    {
+        if(teacher is null)
+        {
+            Console.WriteLine("Teacher is not found!!!");
+            return;
+        }
+        foreach(Teacher storegeTeacher in teachers)
+        {
+            if (storegeTeacher?.Id == teacher.Id)
+            {
+                storegeTeacher.FullName = teacher.FullName;
+                storegeTeacher.Subjects = teacher.Subjects;
+                storegeTeacher.Exprience = teacher.Exprience;
+                storegeTeacher.QualificationCategory = teacher.QualificationCategory;
+                Console.WriteLine("Teacher is successfully updated");
+                return ;
+            }
+        }
+        Console.WriteLine("Student is not found ");
     }
 }

@@ -19,6 +19,10 @@ The current implementation focuses on **teacher management**, with a structure t
 - 👨‍🏫 Teacher management
 - ➕ Add teachers
 - 📋 View teacher information
+- 🔎 Get teacher by ID
+- ✏️ Update teacher information
+- 🗑️ Delete teacher by ID
+- 🆔 Automatic `Guid` ID generation
 - ✅ Input validation
 - ⚠️ Exception handling
 - 🧩 Interface-based architecture
@@ -39,6 +43,8 @@ This project demonstrates:
 - Properties
 - Methods
 - Access Modifiers
+- CRUD Operations
+- GUID
 - Exception Handling
 - Separation of Responsibilities
 

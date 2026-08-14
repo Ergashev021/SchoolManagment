@@ -4,13 +4,14 @@ namespace SchoolManagmnent.Service.ServiceStudent;
 public interface IStudentInterface
 {
     Student GetStudentFromUser();
-    Student [] GetAllStudent();
+    List<Student> GetAllStudent();
     void PrinStudentInfo(Student student);
     void CreateStudent(Student newStudent);
-    void GetStudentByName(string name );
+    List<Student> GetStudentByName(string name );
     void DeleteById(Guid studentId);
     void UpdateTeacher(Student student);
-    void GetPaginatedStudents(int page,int pageSize);
+    List<Student> GetPaginatedStudents(int page,int pageSize);
     void AddStudentRange(params Student[] student );
-
+    public int GetStudentCount();
+    
 }

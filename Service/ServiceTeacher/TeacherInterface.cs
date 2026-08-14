@@ -1,5 +1,5 @@
 using SchoolManagmnent.Models;
-namespace SchoolManagmnent.Service;
+namespace SchoolManagmnent.Service.ServiceTeacher;
 
 
 public  interface ITeacherInterface

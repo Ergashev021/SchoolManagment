@@ -1,4 +1,4 @@
-namespace SchoolManagmnent.Service;
+namespace SchoolManagmnent.Service.ServiceTeacher;
 using SchoolManagmnent.Models;
 
 public class TeacherService : ITeacherInterface

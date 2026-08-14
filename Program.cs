@@ -1,5 +1,5 @@
 ﻿using  SchoolManagmnent.Models;
-using  SchoolManagmnent.Service;
+using  SchoolManagmnent.Service.ServiceTeacher;
 
 
 ITeacherInterface teacherService = new TeacherService();

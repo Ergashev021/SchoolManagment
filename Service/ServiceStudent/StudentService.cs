@@ -35,8 +35,7 @@ public class StudentService : IStudentInterface
             .OrderBy(x => x.FullName)
             .Skip((page - 1) * pageSize)
             .Take(pageSize)
-            .ToList();
-            
+            .ToList();      
     }
 
     public List<Student> GetStudentByName(string name)
@@ -79,7 +78,7 @@ public class StudentService : IStudentInterface
                 """);
     }
 
-    public void UpdateTeacher(Student student)
+    public void UpdateStudent(Student student)
     {
         if(student is null)
         {

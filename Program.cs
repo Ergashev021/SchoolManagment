@@ -115,22 +115,84 @@ while (true)
                 switch (choiceS)
                 {
                     case 1:
+                        var student = studentService.GetStudentFromUser();
+                        studentService.CreateStudent(student);
+                        Console.WriteLine("Student added successfully ");
                         break;
                     case 2:
+                        List<Student> students = studentService.GetAllStudent();
+                        bool hasStudent = false;
+                        foreach(var students1 in students)
+                        {
+                            if(hasStudent != null)
+                            {
+                                studentService.PrinStudentInfo(students1);
+                                hasStudent = true;
+                            }
+                            if (!hasStudent)
+                            {
+                                Console.WriteLine("Student is not found!!!");
+                            }
+                        }
                         break;
                     case 3:
+                        Console.WriteLine($"Students Count {studentService.GetStudentCount()}");
                         break;
                     case 4:
+                        Console.Write("Student name : ");
+                        var studentName = Console.ReadLine();
+                        var studentByName = studentService.GetStudentByName(studentName);
+                        if(studentByName.Count == 0)
+                        {
+                            Console.WriteLine("Student is not found !!!");
+                        }
+                        foreach(var studentname in studentByName)
+                        {
+                            studentService.PrinStudentInfo(studentname);
+                        }
                         break;
                     case 5:
+                        Console.WriteLine("Nechta talaba qoshmoqchisiz : ");
+                        int count = int.Parse(Console.ReadLine());
+                        Student [] newstudents = new Student[count];
+                        for(int i = 0;i < count; i++)
+                        {
+                            Console.WriteLine($"---{i+1}-Student---");
+                            newstudents[i] = studentService.GetStudentFromUser();
+                        }
+                        studentService.AddStudentRange(newstudents);
+                        Console.WriteLine(" Students succeccfully added ");
                         break;
                     case 6:
+                        Console.Write("Student Id : ");
+                        Guid updateStudentId = Guid.Parse(Console.ReadLine());
+                        Student? newStudent = studentService.GetStudentFromUser();
+                        newStudent.Id = updateStudentId;
+                        studentService.UpdateStudent(newStudent);
                         break;
                     case 7:
+                        Console.Write("Page : ");
+                        int page = int.Parse(Console.ReadLine());
+                        Console.Write("Size : ");
+                        int pageSize = int.Parse(Console.ReadLine());
+                        var StudentPage = studentService.GetPaginatedStudents(page,pageSize);
+                        if(StudentPage.Count == 0)
+                        {
+                            Console.WriteLine("Student is not found!!!");
+                            break;
+                        }
+                        foreach(var studentp in StudentPage)
+                        {
+                            studentService.PrinStudentInfo(studentp);
+                        }
                         break;
                     case 8:
+                        Console.Write(" Id ni kiriting : ");
+                        Guid deleteStId = Guid.Parse(Console.ReadLine());
+                        studentService.DeleteById(deleteStId);
                         break;
                     case 9: 
+                        selection1 = false;
                         break;
                     default:
                         Console.WriteLine("Incorrect buttun");

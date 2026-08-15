@@ -1,76 +1,107 @@
 # 🎓 School Management System
 
-A console-based **School Management System** developed with **C# and .NET**.
-
-The project is designed to practice and demonstrate fundamental **Object-Oriented Programming (OOP)** concepts and structured application development.
+> A console-based school management application built with C# and .NET for managing students and teachers through a structured service-based architecture.
 
 ---
 
-## 🚀 Overview
+## 📋 Table of Contents
 
-School Management System provides a simple foundation for managing school-related data.
+- [Overview](#-overview)
+- [Features](#-features)
+- [Technology Stack](#-technology-stack)
+- [Architecture](#-architecture)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Application Flow](#-application-flow)
+- [Author](#-author)
+- [License](#-license)
 
-The current implementation focuses on **teacher management**, with a structure that can be extended with additional modules such as students, classes, subjects, and more.
+---
+
+## 📖 Overview
+
+**School Management System** is a modular console application developed with **C# and .NET**.
+
+The system provides a centralized environment for managing core school data, including:
+
+- Students
+- Teachers
+
+The application is designed around a **service-based structure**, where business logic is separated from the console interface and domain models.
+
+The project demonstrates practical usage of **Object-Oriented Programming, interfaces, collections, LINQ, CRUD operations, searching, sorting, and pagination**.
 
 ---
 
 ## ✨ Features
 
-- 👨‍🏫 Teacher management
-- ➕ Add teachers
-- 📋 View teacher information
-- 🔎 Get teacher by ID
-- ✏️ Update teacher information
-- 🗑️ Delete teacher by ID
-- 🆔 Automatic `Guid` ID generation
-- ✅ Input validation
-- ⚠️ Exception handling
-- 🧩 Interface-based architecture
-- 🏗️ Service-layer structure
-- 📦 Organized project structure
+### 👨‍🎓 Student Management
+
+- Create students
+- View all students
+- Search students by name
+- Get student count
+- Add multiple students
+- Update student information
+- Delete students by ID
+- Paginate student records
+- Sort students by name
+
+### 👨‍🏫 Teacher Management
+
+- Create teachers
+- View all teachers
+- Find teachers by ID
+- Update teacher information
+- Delete teachers by ID
+- Display teacher information
+
+### ⚙️ General
+
+- Interactive console menus
+- Service-based business logic
+- Interface-driven services
+- LINQ-based data processing
+- In-memory collection management
+- ID-based record operations
 
 ---
 
-## 🧠 Concepts
+## 🛠️ Technology Stack
 
-This project demonstrates:
-
-- Object-Oriented Programming
-- Encapsulation
-- Abstraction
-- Interfaces
-- Classes & Objects
-- Properties
-- Methods
-- Access Modifiers
-- CRUD Operations
-- GUID
-- Exception Handling
-- Separation of Responsibilities
+| Technology | Usage |
+|---|---|
+| **C#** | Application development |
+| **.NET** | Runtime and application platform |
+| **LINQ** | Searching, filtering, sorting, pagination and counting |
+| **List<T>** | In-memory collection management |
+| **Array** | Collection and multiple-record operations |
+| **Interfaces** | Service abstraction |
+| **OOP** | Application architecture and design |
+| **Git** | Version control |
+| **GitHub** | Source code management |
 
 ---
 
-## 🛠️ Technologies
+## 🏗️ Architecture
 
-- **C#**
-- **.NET**
-- **Console Application**
-- **Git**
-- **GitHub**
-
----
-
-## 📁 Project Structure
+The application follows a simple **Service Layer Architecture**.
 
 ```text
-SchoolManagement/
-│
-├── Models/
-│   └── Teacher.cs
-│
-├── Service/
-│   ├── ITeacherInterface.cs
-│   └── TeacherService.cs
-│
-├── Program.cs
-└── SchoolManagement.csproj
+                    School Management System
+                              │
+                ┌─────────────┴─────────────┐
+                │                           │
+          Student Module              Teacher Module
+                │                           │
+        ┌───────┴───────┐           ┌───────┴───────┐
+        │               │           │               │
+    Interface        Service    Interface        Service
+        │               │           │               │
+        └───────────────┘           └───────────────┘
+                │                           │
+                └─────────────┬─────────────┘
+                              │
+                         Program.cs
+                              │
+                       Console Interface

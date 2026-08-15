@@ -1,6 +1,6 @@
 namespace SchoolManagmnent.Service.ServiceStudent;
 using SchoolManagmnent.Models;
-public class StuidentService : IStudentInterface
+public class StudentService : IStudentInterface
 {
     private  List<Student> students = new List <Student>();
     
